@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<h1>Стена постов</h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+        <p>{{ post.content|truncatechars:200 }}</p>
+        <p>Автор: {{ post.author.username }} | {{ post.created_at }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

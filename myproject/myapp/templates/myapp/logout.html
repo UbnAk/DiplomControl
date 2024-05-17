@@ -1,0 +1,7 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<h1>Вы вышли из системы</h1>
+<p>Спасибо, что посетили наш сайт. До свидания!</p>
+<a href="{% url 'login' %}">Войти снова</a>
+{% endblock %}
