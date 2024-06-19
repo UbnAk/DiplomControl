@@ -4,7 +4,19 @@
 <h1>Добавить комментарий</h1>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% for field in form %}
+    <div class="form-group">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.errors %}
+        <div class="alert alert-danger">
+            {% for error in field.errors %}
+            {{ error }}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
     <button type="submit">Отправить</button>
 </form>
 {% endblock %}

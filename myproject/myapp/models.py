@@ -1,4 +1,3 @@
-
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -26,11 +25,3 @@ class PostReaction(models.Model):
     ))
     
     
-# class Reaction(models.Model):
-#     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='reactions')
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     reaction = models.CharField(max_length=10, choices=(
-#         ('like', 'Like'),
-#         ('dislike', 'Dislike'),
-#     ))
-
